@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-import config from "./app/config";
 import app from "./app";
-import { console } from "node:inspector/promises";
+import { config } from "./app/config";
 
 async function main() {
   try {
     await mongoose.connect(config.database_url as string);
+    console.log("mongodb cannected");
 
     app.listen(config.port, () => {
       console.log(`Example app listening on port ${config.port}`);
