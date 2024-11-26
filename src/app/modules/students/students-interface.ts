@@ -1,5 +1,6 @@
-import { type } from "os";
+
 import { Schema, model, connect } from "mongoose";
+
 
 export type UserName = {
   firstName: string;
@@ -26,12 +27,13 @@ export type LocalGuardian = {
 export type Student = {
   id: string;
   name: UserName;
-  gender: "male" | "female";
+  gender:"male" | "female" | "Other";
+    
   dateOfBirth: string;
   email: string;
   contractNumber: string;
   emergencyContract: string;
-  bloodGroup: "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-";
+  bloodGroup:  "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-";
   presentAddress: string;
   premanetAddress: string;
 
@@ -39,7 +41,7 @@ export type Student = {
 
   localGuardian: LocalGuardian;
   profileImage?: string;
-  isActive: "active" | "inActive";
+  isActive:"active" | "inActive";
 };
 
 export default Student;
